@@ -19,7 +19,7 @@ class StartScreen extends StatelessWidget {
           const Text(
             "Learn Flutter the fun way!",
             style: TextStyle(
-              fontSize: 20,
+              fontSize: 24,
               color: Colors.white,
             ),
           ),
@@ -31,7 +31,7 @@ class StartScreen extends StatelessWidget {
             child: const Text(
               "Start Quiz",
               style: TextStyle(
-                fontSize: 12,
+                fontSize: 16,
                 color: Colors.white,
               ),
             ),
