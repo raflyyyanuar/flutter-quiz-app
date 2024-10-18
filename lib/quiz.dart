@@ -26,16 +26,18 @@ class _QuizState extends State<Quiz> {
   void chooseAnswer(String answer) {
     selectedAnswers.add(answer);
     if(selectedAnswers.length >= questions.length) {
-      selectedAnswers.clear();
       switchScreen('result-screen');
     }
   }
 
   @override
   Widget build(BuildContext context) {
-    Widget screenWidget = StartScreen(switchScreen);
-
-    if(activeScreen == 'questions-screen') {
+    Widget? screenWidget;
+    if(activeScreen == 'start-screen') {
+      screenWidget = StartScreen(switchScreen);
+      selectedAnswers.clear();
+    }
+    else if(activeScreen == 'questions-screen') {
       screenWidget = QuestionsScreen(chooseAnswer);
     }
     else if(activeScreen == 'result-screen') {
